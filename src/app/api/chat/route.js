@@ -18,7 +18,7 @@ Your goal is to provide a seamless, supportive experience that helps users make 
 
 const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: 'my-api-key',
   })
   async function main(data) {
     const completion = await openai.chat.completions.create({
