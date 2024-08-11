@@ -14,7 +14,7 @@ Welcome to the Headstarter AI Customer Support Chatbot! This project is designed
 
 - **Frontend**: [Next.js](https://nextjs.org/)
 - **Backend**: [Firebase](https://firebase.google.com/)
-- **AI**: [Llama 3.1 8B]([https://openai.com/](https://openrouter.ai/models/meta-llama/llama-3.1-8b-instruct:free))
+- **AI**: [Llama 3.1 8B]([https://openrouter.ai/models/meta-llama/llama-3.1-8b-instruct:free])
 - **Hosting**: [Vercel](https://vercel.com/)
 - **Conversational Logic**: [LangChain](https://langchain.com/)
 
