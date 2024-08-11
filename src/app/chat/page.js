@@ -15,30 +15,29 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null)
 
-  // Function to scroll to the bottom of the chat
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  // Scroll to the bottom whenever messages change
+  
   useEffect(() => {
     scrollToBottom()
   }, [messages])
 
-  // Function to send a message
-  // Function to send a message
+
 const sendMessage = async () => {
-    if (!message.trim() || isLoading) return;  // Prevent sending empty messages or while loading
+    if (!message.trim() || isLoading) return;  
     setIsLoading(true)
-    setMessage('')  // Clear the input field
+    setMessage('')  
     setMessages((messages) => [
       ...messages,
-      { role: 'user', content: message },  // Add the user's message to the chat
-      { role: 'assistant', content: '' },  // Add a placeholder for the assistant's response
+      { role: 'user', content: message },  
+      { role: 'assistant', content: '' },  
     ])
   
     try {
-      // Send the message to the server
+      
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -54,7 +53,7 @@ const sendMessage = async () => {
       const reader = response.body.getReader()
       const decoder = new TextDecoder()
   
-      // Read the streamed response and update the chat
+      
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
@@ -65,7 +64,7 @@ const sendMessage = async () => {
           let otherMessages = messages.slice(0, messages.length - 1)
           return [
             ...otherMessages,
-            { ...lastMessage, content: lastMessage.content + JSON.parse(text).content }, // Extracting content field
+            { ...lastMessage, content: lastMessage.content + JSON.parse(text).content }, 
           ]
         })
       }
@@ -81,7 +80,6 @@ const sendMessage = async () => {
   }
   
 
-  // Handle sending messages with the Enter key
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault()
