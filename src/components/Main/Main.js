@@ -23,7 +23,7 @@ export default function Main() {
             <Stack
               bgcolor={"white"}
               color={"black"}
-              width={120}
+              width={140}
               height={40}
               justifyContent={"center"}
               alignItems={"center"}
@@ -37,7 +37,7 @@ export default function Main() {
                 },
               }}
             >
-              Join
+              Join-Waitlist
             </Stack>
       </Stack>
     </Stack>
