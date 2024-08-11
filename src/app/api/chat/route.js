@@ -1,6 +1,5 @@
-import { NextResponse } from "next/server";
-import OpenAI from "openai";
-
+import { NextResponse } from 'next/server'
+import OpenAI from 'openai'
 
 const system_prompt = `You are a helpful, friendly, and knowledgeable customer support AI for Headstarter, an interview practice platform where users can engage in real-time mock interviews with AI to prepare for real interviews. Your role is to assist users by answering questions, troubleshooting issues, and providing guidance on how to use the platform effectively.
 Key Points to Remember:
@@ -13,23 +12,23 @@ Privacy and Security: Always prioritize user privacy. Do not ask for or share se
 Your goal is to provide a seamless, supportive experience that helps users make the most of their interview practice on Headstarter.`
 
 const openai = new OpenAI({
-    baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.MY_API_KEY,
-  })
-  async function main(data) {
-    const completion = await openai.chat.completions.create({
-      model: "meta-llama/llama-3.1-8b-instruct:free",
-      messages: [{ role: "system", content: system_prompt },...data],
-    })
-    return completion.choices[0].message
-  }
-
-export async function GET(req){
-    return NextResponse.json({message:'Hello From APIs'})
+	baseURL: 'https://openrouter.ai/api/v1',
+	apiKey: process.env.MY_API_KEY,
+})
+async function main(data) {
+	const completion = await openai.chat.completions.create({
+		model: 'meta-llama/llama-3.1-8b-instruct:free',
+		messages: [{ role: 'system', content: system_prompt }, ...data],
+	})
+	return completion.choices[0].message
 }
 
-export async function POST(req){
-    const data = await req.json()
-    const res = await main(data); 
-    return NextResponse.json(res);
+export async function GET(req) {
+	return NextResponse.json({ message: 'Hello From APIs' })
+}
+
+export async function POST(req) {
+	const data = await req.json()
+	const res = await main(data)
+	return NextResponse.json(res)
 }
