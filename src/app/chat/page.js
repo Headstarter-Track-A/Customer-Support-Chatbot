@@ -26,7 +26,8 @@ export default function Home() {
   }, [messages])
 
   // Function to send a message
-  const sendMessage = async () => {
+  // Function to send a message
+const sendMessage = async () => {
     if (!message.trim() || isLoading) return;  // Prevent sending empty messages or while loading
     setIsLoading(true)
     setMessage('')  // Clear the input field
@@ -35,7 +36,7 @@ export default function Home() {
       { role: 'user', content: message },  // Add the user's message to the chat
       { role: 'assistant', content: '' },  // Add a placeholder for the assistant's response
     ])
-
+  
     try {
       // Send the message to the server
       const response = await fetch('/api/chat', {
@@ -45,25 +46,26 @@ export default function Home() {
         },
         body: JSON.stringify([...messages, { role: 'user', content: message }]),
       })
-
+  
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
-
+  
       const reader = response.body.getReader()
       const decoder = new TextDecoder()
-
+  
       // Read the streamed response and update the chat
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
         const text = decoder.decode(value, { stream: true })
+  
         setMessages((messages) => {
           let lastMessage = messages[messages.length - 1]
           let otherMessages = messages.slice(0, messages.length - 1)
           return [
             ...otherMessages,
-            { ...lastMessage, content: lastMessage.content + text },
+            { ...lastMessage, content: lastMessage.content + JSON.parse(text).content }, // Extracting content field
           ]
         })
       }
@@ -77,6 +79,7 @@ export default function Home() {
       setIsLoading(false)
     }
   }
+  
 
   // Handle sending messages with the Enter key
   const handleKeyPress = (event) => {
