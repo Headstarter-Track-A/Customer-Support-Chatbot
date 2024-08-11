@@ -9,7 +9,6 @@ export default function Navbar() {
     <Stack
       width={"100%"}
       height={"60px"}
-
       direction={"row"}
       gap={2}
       padding={1}
@@ -41,7 +40,7 @@ export default function Navbar() {
       </Stack>
       <Stack
         height={"40px"}
-        width={"76%"}
+        width={"69%"}
         bgcolor={"#000000"}
         borderRadius={2}
         color={"white"}
@@ -100,6 +99,40 @@ export default function Navbar() {
         >
           <Link href={"/"}>Github</Link>
         </Stack>
+      </Stack>
+      <Stack
+        height={"40px"}
+        width={"7%"}
+        bgcolor={"#000000"}
+        borderRadius={2}
+        justifyContent={"center"}
+        alignItems={"center"}
+        color={"white"}
+        sx={{
+          "&:hover": {
+            backgroundColor: "white",
+            color: "black",
+          },
+        }}
+      >
+        <Link href="/chat">Chat</Link>
+      </Stack>
+      <Stack
+        height={"40px"}
+        width={"7%"}
+        bgcolor={"#000000"}
+        borderRadius={2}
+        justifyContent={"center"}
+        alignItems={"center"}
+        color={"white"}
+        sx={{
+          "&:hover": {
+            backgroundColor: "white",
+            color: "black",
+          },
+        }}
+      >
+        <Link href="/">Home</Link>
       </Stack>
     </Stack>
   );

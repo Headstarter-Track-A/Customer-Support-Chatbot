@@ -84,7 +84,7 @@ export default function Home() {
 	}
 
 	return (
-		<Stack width={'100vw'} height={'100vh'} justifyContent={'center'} alignItems={'center'}>
+		<Stack width={'100vw'} height={'100vh'} justifyContent={'center'} alignItems={'center'} bgcolor="#1E1E1E">
 			<Box
 				width="100vw"
 				height="100vh"
@@ -92,15 +92,17 @@ export default function Home() {
 				flexDirection="column"
 				justifyContent="center"
 				alignItems="center"
-				bgcolor="white" // Changed background color to white
+				bgcolor="#1E1E1E" // Dark background color
 			>
 				<Stack
 					direction={'column'}
 					width="500px"
 					height="700px"
-					border="1px solid black"
+					border="1px solid #3C3C3C" // Darker border color
 					p={2}
 					spacing={3}
+					bgcolor="#2D2D2D" // Slightly lighter dark background for the chat box
+					color="white" // White text color
 				>
 					<Stack direction={'column'} spacing={2} flexGrow={1} overflow="auto" maxHeight="100%">
 						{messages.map((message, index) => (
@@ -110,7 +112,7 @@ export default function Home() {
 								justifyContent={message.role === 'assistant' ? 'flex-start' : 'flex-end'}
 							>
 								<Box
-									bgcolor={message.role === 'assistant' ? 'primary.main' : 'secondary.main'}
+									bgcolor={message.role === 'assistant' ? '#3C3C3C' : '#007ACC'} // Different colors for assistant and user messages
 									color="white"
 									borderRadius={16}
 									p={3}
@@ -129,8 +131,15 @@ export default function Home() {
 							onChange={(e) => setMessage(e.target.value)}
 							onKeyPress={handleKeyPress}
 							disabled={isLoading}
+							InputLabelProps={{ style: { color: 'white' } }} // White label color
+							InputProps={{
+								style: { color: 'white' }, // White text color
+								disableUnderline: true,
+								style: { backgroundColor: '#3C3C3C', borderRadius: 4, padding: '10px' }, // Dark background for input
+								inputProps: { style: { color: 'white' } } // White text color for input
+							}}
 						/>
-						<Button variant="contained" onClick={sendMessage} disabled={isLoading}>
+						<Button variant="contained" onClick={sendMessage} disabled={isLoading} style={{ backgroundColor: '#007ACC', color: 'white' }}>
 							{isLoading ? 'Sending...' : 'Send'}
 						</Button>
 					</Stack>
