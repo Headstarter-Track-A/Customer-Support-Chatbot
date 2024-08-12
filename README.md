@@ -40,8 +40,8 @@ http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/
 http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/chat/
 
 ## Demo:
-<a href="https://www.youtube.com/watch?v=No2uuonh90M" target="_blank">
-  <img src="https://img.youtube.com/vi/No2uuonh90M/0.jpg" alt="Watch the video" style="width:100%; max-width:600px;">
+<a href="https://www.youtube.com/watch?v=6FhqInrrpDE&t" target="_blank">
+  <img src="https://img.youtube.com/vi/6FhqInrrpDE&t/0.jpg" alt="Watch the video" style="width:100%; max-width:600px;">
 </a>
 
 ## UI:
