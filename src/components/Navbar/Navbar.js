@@ -24,7 +24,9 @@ export default function Navbar() {
         direction={"row"}
         gap={1}
         paddingX={1}
+        
       >
+        <Link href={'/'} style={{display:'flex',gap:2, justifyContent:"center", alignItems:"center"}}>
         <Stack width={"20%"}>
           <Image src={"/logo2.png"} alt="logo" width={30} height={30} />
         </Stack>
@@ -37,7 +39,9 @@ export default function Navbar() {
         >
           <TextGenerateEffect words={"HeadStarter"} />
         </Stack>
+        </Link>
       </Stack>
+     
       <Stack
         height={"40px"}
         width={"69%"}
