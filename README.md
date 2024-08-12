@@ -38,3 +38,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Live Project on EC2 Instance:
 http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/
 http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/chat/
+
+## UI:
+![Main UI](public/mainui.png)
+![Chatbot UI](public/chatbotui.png)
+![EC2](public/ec2.png)
+
