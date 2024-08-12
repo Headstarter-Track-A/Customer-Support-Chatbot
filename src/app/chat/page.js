@@ -84,7 +84,7 @@ export default function Home() {
 	}
 
 	return (
-		<Stack width={'100vw'} height={'100vh'} justifyContent={'center'} alignItems={'center'} bgcolor="#1E1E1E">
+		<Stack justifyContent={'center'} alignItems={'center'} >
 			<Box
 				width="100vw"
 				height="100vh"
@@ -92,7 +92,7 @@ export default function Home() {
 				flexDirection="column"
 				justifyContent="center"
 				alignItems="center"
-				bgcolor="#1E1E1E" // Dark background color
+				
 			>
 				<Stack
 					direction={'column'}
