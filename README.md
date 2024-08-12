@@ -36,8 +36,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 ## Live Project on EC2 Instance:
-http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/
-http://ec2-44-204-55-19.compute-1.amazonaws.com:3000/chat/
+
+1. http://ec2-54-166-199-201.compute-1.amazonaws.com:3000/
+2. http://ec2-54-166-199-201.compute-1.amazonaws.com:3000/chat
 
 ## Demo:
 <a href="https://www.youtube.com/watch?v=6FhqInrrpDE&t" target="_blank">
